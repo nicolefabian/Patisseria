@@ -48,7 +48,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         var loginSuccessful = false
         
         if validateForm(){
-            let selectStatementString = "SELECT userID, useremail, userpass FROM User"
+            let selectStatementString = "SELECT userID, useremail, userpass, visuallyImpaired FROM User"
             var selectStatementQuery: OpaquePointer?
             
             // select query
@@ -61,7 +61,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                 while sqlite3_step(selectStatementQuery) == SQLITE_ROW{
                     
                     showData += "ID: " + String(cString: sqlite3_column_text(selectStatementQuery, 0)) + "\t\t" + "email: " + String(cString: sqlite3_column_text(selectStatementQuery, 1)) + "\t\t" +
-                        "password: " + String(cString: sqlite3_column_text(selectStatementQuery, 2)) + "\n"
+                        "password: " + String(cString: sqlite3_column_text(selectStatementQuery, 2)) + "\t\t" +
+                        "visually impaired: " + String(cString: sqlite3_column_text(selectStatementQuery, 3)) + "\n"
                     print(showData ?? "This is showData")
                     
                     if(loginEmail == String(cString: sqlite3_column_text(selectStatementQuery, 1)) && loginPass == String(cString: sqlite3_column_text(selectStatementQuery, 2))){
@@ -71,6 +72,14 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                             // User is an admin, navigate to admin view controller
                             let adminViewController = storyboard?.instantiateViewController(withIdentifier: "AdminViewController") as! AdminViewController
                             navigationController?.pushViewController(adminViewController, animated: true)
+                            
+                            // Hide the back button in the regular view controller
+                                    navigationController?.setNavigationBarHidden(true, animated: false)
+                        }
+                        else if String(cString: sqlite3_column_text(selectStatementQuery, 3)) == "Yes"{
+                            // User is an admin, navigate to admin view controller
+                            let visuallyImpairedViewController = storyboard?.instantiateViewController(withIdentifier: "VisualImpairedViewController") as! VisualImpairedViewController
+                            navigationController?.pushViewController(visuallyImpairedViewController, animated: true)
                             
                             // Hide the back button in the regular view controller
                                     navigationController?.setNavigationBarHidden(true, animated: false)
@@ -91,7 +100,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
 //                    showMessage(message: "Login success", buttonCaption: "Close", controller: self)
                 }
                 else{
-                    showMessage(message: "Login failed", buttonCaption: "Try again", controller: self)
+                    showMessage(message: "Login failed 🙁", buttonCaption: "Try again", controller: self)
                 }
                 sqlite3_finalize(selectStatementQuery)
             }

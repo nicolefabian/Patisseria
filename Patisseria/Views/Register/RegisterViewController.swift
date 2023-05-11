@@ -74,6 +74,8 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
                 sqlite3_bind_text(insertStatementQuery, 4, emailTextField.text ?? "" , -1, SQLITE_TRANSIENT)
                 sqlite3_bind_text(insertStatementQuery, 5, passwordTextField.text ?? "" , -1, SQLITE_TRANSIENT)
                 
+                showMessage(message: "Registered account 🥳", buttonCaption: "Go back to login", controller: self)
+                
                 if(sqlite3_step(insertStatementQuery)) == SQLITE_DONE{
                     firstNameTextField.text = ""
                     lastNameTextField.text = ""
@@ -105,7 +107,7 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
             resetForm()
         }
         else{
-            showMessage(message: "Form must be filled.", buttonCaption: "Close", controller: self)
+            showMessage(message: "Form must be filled", buttonCaption: "Close", controller: self)
         }
     }
     
@@ -198,7 +200,7 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
             return false
         }
         else if visuallyImpaired.lowercased() != "yes" && visuallyImpaired.lowercased() != "no" {
-            showMessage(message: "Are you visually impaired?", buttonCaption: "Answer in text box", controller: self)
+            showMessage(message: "Are you visually impaired?", buttonCaption: "Answer yes or no in text box", controller: self)
             return false
         }
         else if !predicate.evaluate(with: email){

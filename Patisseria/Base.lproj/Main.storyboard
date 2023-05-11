@@ -334,7 +334,22 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RTc-jU-pU1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2299" y="-477"/>
+            <point key="canvasLocation" x="2314" y="3"/>
+        </scene>
+        <!--Visual Impaired View Controller-->
+        <scene sceneID="SXP-Ov-Jas">
+            <objects>
+                <viewController storyboardIdentifier="VisualImpairedViewController" id="fet-gF-akk" customClass="VisualImpairedViewController" customModule="Patisseria" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="N7N-KE-yFm">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="0pO-uW-f0D"/>
+                        <color key="backgroundColor" systemColor="systemBrownColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Laz-PY-nyJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2313" y="-700"/>
         </scene>
         <!--Admin View Controller-->
         <scene sceneID="RVu-BD-WAw">
@@ -349,7 +364,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jyO-mL-P3E" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2299" y="305"/>
+            <point key="canvasLocation" x="2312" y="710"/>
         </scene>
         <!--Register View Controller-->
         <scene sceneID="Trp-Ao-HbN">
@@ -580,6 +595,9 @@
         <image name="Slide2" width="500" height="500"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBrownColor">
+            <color red="0.63529411764705879" green="0.51764705882352946" blue="0.36862745098039218" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemGreenColor">
             <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

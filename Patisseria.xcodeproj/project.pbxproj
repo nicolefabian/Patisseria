@@ -21,6 +21,7 @@
 		3F590E722A04E1F900CD61EA /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F590E712A04E1F900CD61EA /* RegisterViewController.swift */; };
 		3F6D4FA42A0D4454007E602C /* AdminViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6D4FA32A0D4454007E602C /* AdminViewController.swift */; };
 		3F6D4FA62A0D4485007E602C /* RegularViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6D4FA52A0D4485007E602C /* RegularViewController.swift */; };
+		3F6D4FA92A0D4C99007E602C /* VisualImpairedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6D4FA82A0D4C99007E602C /* VisualImpairedViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		3F590E712A04E1F900CD61EA /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		3F6D4FA32A0D4454007E602C /* AdminViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminViewController.swift; sourceTree = "<group>"; };
 		3F6D4FA52A0D4485007E602C /* RegularViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegularViewController.swift; sourceTree = "<group>"; };
+		3F6D4FA82A0D4C99007E602C /* VisualImpairedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisualImpairedViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +100,7 @@
 		3F4FE0C92A037B5D00DA0418 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				3F6D4FA72A0D4C75007E602C /* VisuallyImpaired */,
 				3F6D4FA22A0D4425007E602C /* Regular */,
 				3F6D4FA12A0D441D007E602C /* Admin */,
 				3F590E6E2A03C04100CD61EA /* Register */,
@@ -161,6 +164,14 @@
 				3F6D4FA52A0D4485007E602C /* RegularViewController.swift */,
 			);
 			path = Regular;
+			sourceTree = "<group>";
+		};
+		3F6D4FA72A0D4C75007E602C /* VisuallyImpaired */ = {
+			isa = PBXGroup;
+			children = (
+				3F6D4FA82A0D4C99007E602C /* VisualImpairedViewController.swift */,
+			);
+			path = VisuallyImpaired;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -241,6 +252,7 @@
 				3F4FE0CD2A037BB200DA0418 /* OnboardingViewController.swift in Sources */,
 				3F4FE0B22A036B8B00DA0418 /* AppDelegate.swift in Sources */,
 				3F4FE0D02A037ED800DA0418 /* UIView+Extension.swift in Sources */,
+				3F6D4FA92A0D4C99007E602C /* VisualImpairedViewController.swift in Sources */,
 				3F590E6D2A03AF3400CD61EA /* LoginViewController.swift in Sources */,
 				3F4FE0D22A03805C00DA0418 /* OnboardingSlide.swift in Sources */,
 				3F4FE0D42A03830E00DA0418 /* OnboardingCollectionViewCell.swift in Sources */,
