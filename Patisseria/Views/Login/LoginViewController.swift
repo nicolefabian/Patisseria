@@ -71,11 +71,16 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                             // User is an admin, navigate to admin view controller
                             let adminViewController = storyboard?.instantiateViewController(withIdentifier: "AdminViewController") as! AdminViewController
                             navigationController?.pushViewController(adminViewController, animated: true)
+                            
+                            // Hide the back button in the regular view controller
+                                    navigationController?.setNavigationBarHidden(true, animated: false)
                         }
                         else{
                             // User is not an admin, navigate to regular view controller
                             let regularViewController = storyboard?.instantiateViewController(withIdentifier: "RegularViewController") as! RegularViewController
                             navigationController?.pushViewController(regularViewController, animated: true)
+                            // Hide the back button in the regular view controller
+                                    navigationController?.setNavigationBarHidden(true, animated: false)
                         }
                         
                         break
