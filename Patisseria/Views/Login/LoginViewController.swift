@@ -51,6 +51,9 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
             let selectStatementString = "SELECT userID, useremail, userpass FROM User"
             var selectStatementQuery: OpaquePointer?
             
+            // Check admin status
+            let isAdmin = checkAdminStatus()
+            
             // select query
             // get data
             var showData: String!
@@ -66,6 +69,18 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                     
                     if(loginEmail == String(cString: sqlite3_column_text(selectStatementQuery, 1)) && loginPass == String(cString: sqlite3_column_text(selectStatementQuery, 2))){
                         loginSuccessful = true
+                        
+                        if isAdmin{
+                            // User is an admin, navigate to admin view controller
+                            let adminViewController = storyboard?.instantiateViewController(withIdentifier: "AdminViewController") as! AdminViewController
+                            navigationController?.pushViewController(adminViewController, animated: true)
+                        }
+                        else{
+                            // User is not an admin, navigate to regular view controller
+                            let regularViewController = storyboard?.instantiateViewController(withIdentifier: "RegularViewController") as! RegularViewController
+                            navigationController?.pushViewController(regularViewController, animated: true)
+                        }
+                        
                         break
                     }
                 }
@@ -123,6 +138,11 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
             return false
         }
         return true // form is valid
+    }
+    
+    func checkAdminStatus() -> Bool {
+        let isAdmin = true
+        return isAdmin
     }
     
     // MARK: Frontend functions

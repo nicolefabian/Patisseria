@@ -19,7 +19,8 @@
 		3F4FE0D42A03830E00DA0418 /* OnboardingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F4FE0D32A03830E00DA0418 /* OnboardingCollectionViewCell.swift */; };
 		3F590E6D2A03AF3400CD61EA /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F590E6C2A03AF3400CD61EA /* LoginViewController.swift */; };
 		3F590E722A04E1F900CD61EA /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F590E712A04E1F900CD61EA /* RegisterViewController.swift */; };
-		3F590E782A0518D500CD61EA /* Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F590E772A0518D500CD61EA /* Users.swift */; };
+		3F6D4FA42A0D4454007E602C /* AdminViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6D4FA32A0D4454007E602C /* AdminViewController.swift */; };
+		3F6D4FA62A0D4485007E602C /* RegularViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6D4FA52A0D4485007E602C /* RegularViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,7 +38,8 @@
 		3F4FE0D32A03830E00DA0418 /* OnboardingCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCollectionViewCell.swift; sourceTree = "<group>"; };
 		3F590E6C2A03AF3400CD61EA /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		3F590E712A04E1F900CD61EA /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
-		3F590E772A0518D500CD61EA /* Users.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Users.swift; sourceTree = "<group>"; };
+		3F6D4FA32A0D4454007E602C /* AdminViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminViewController.swift; sourceTree = "<group>"; };
+		3F6D4FA52A0D4485007E602C /* RegularViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegularViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,7 +91,6 @@
 			isa = PBXGroup;
 			children = (
 				3F4FE0D12A03805C00DA0418 /* OnboardingSlide.swift */,
-				3F590E772A0518D500CD61EA /* Users.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -97,6 +98,8 @@
 		3F4FE0C92A037B5D00DA0418 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				3F6D4FA22A0D4425007E602C /* Regular */,
+				3F6D4FA12A0D441D007E602C /* Admin */,
 				3F590E6E2A03C04100CD61EA /* Register */,
 				3F590E6B2A03AF1C00CD61EA /* Login */,
 				3F4FE0CB2A037B7900DA0418 /* Onboarding */,
@@ -142,6 +145,22 @@
 				3F590E712A04E1F900CD61EA /* RegisterViewController.swift */,
 			);
 			path = Register;
+			sourceTree = "<group>";
+		};
+		3F6D4FA12A0D441D007E602C /* Admin */ = {
+			isa = PBXGroup;
+			children = (
+				3F6D4FA32A0D4454007E602C /* AdminViewController.swift */,
+			);
+			path = Admin;
+			sourceTree = "<group>";
+		};
+		3F6D4FA22A0D4425007E602C /* Regular */ = {
+			isa = PBXGroup;
+			children = (
+				3F6D4FA52A0D4485007E602C /* RegularViewController.swift */,
+			);
+			path = Regular;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -215,13 +234,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3F6D4FA42A0D4454007E602C /* AdminViewController.swift in Sources */,
 				3F590E722A04E1F900CD61EA /* RegisterViewController.swift in Sources */,
 				3F4FE0BC2A036B8B00DA0418 /* Patisseria.xcdatamodeld in Sources */,
+				3F6D4FA62A0D4485007E602C /* RegularViewController.swift in Sources */,
 				3F4FE0CD2A037BB200DA0418 /* OnboardingViewController.swift in Sources */,
 				3F4FE0B22A036B8B00DA0418 /* AppDelegate.swift in Sources */,
 				3F4FE0D02A037ED800DA0418 /* UIView+Extension.swift in Sources */,
 				3F590E6D2A03AF3400CD61EA /* LoginViewController.swift in Sources */,
-				3F590E782A0518D500CD61EA /* Users.swift in Sources */,
 				3F4FE0D22A03805C00DA0418 /* OnboardingSlide.swift in Sources */,
 				3F4FE0D42A03830E00DA0418 /* OnboardingCollectionViewCell.swift in Sources */,
 				3F4FE0B42A036B8B00DA0418 /* SceneDelegate.swift in Sources */,
