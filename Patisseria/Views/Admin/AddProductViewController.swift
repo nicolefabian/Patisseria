@@ -7,7 +7,7 @@
 
 import UIKit
 
-class AdminViewController: UIViewController {
+class AddProductViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

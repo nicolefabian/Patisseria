@@ -26,8 +26,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         else if(newUserTable() == false){
             print("Creating new user table failed.")
         }
-        else if(createProductsTable() == false){
+        else if(createProductsTable() == false && dropProductsTable() == false){
             print("Creating products table failed.")
+        }
+        else if(newProductTable() == false){
+            print("Creating new product table failed.")
+        }
+        else if(createWishTable() == false){
+            print("Creating wishlist table failed.")
         }
         else if(createCartTable() == false){
             print("Creating cart table failed.")
@@ -116,7 +122,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return bRetVal
     }
     
-    
     func createUsersTables() -> Bool{
         var bRetVal : Bool = false
         
@@ -133,6 +138,38 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return bRetVal
     }
     // MARK: Products table
+    func newProductTable() -> Bool{
+        var bRetVal : Bool = false
+        
+        let newProductTable = sqlite3_exec(dbQueue, "CREATE TABLE IF NOT EXISTS Product (productID INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT, productName TEXT NOT NULL, productDescription TEXT NOT NULL, productStock INTEGER NOT NULL, productPrice INTEGER NOT NULL, productImage TEXT NOT NULL)", nil, nil, nil)
+        
+        if(newProductTable != SQLITE_OK){
+            print("Cannot create new product table :(")
+            bRetVal = false
+        }
+        else{
+            bRetVal = true
+        }
+        
+        return bRetVal
+    }
+    
+    func dropProductsTable() -> Bool{
+        var bRetVal : Bool = false
+        
+        let newProductsTable = sqlite3_exec(dbQueue, "DROP TABLE Products", nil, nil, nil)
+        
+        if(newProductsTable != SQLITE_OK){
+            print("Cannot drop old users table :(")
+            bRetVal = false
+        }
+        else{
+            bRetVal = true
+        }
+        
+        return bRetVal
+    }
+    
     func createProductsTable() -> Bool{
         var bRetVal : Bool = false
         
@@ -164,6 +201,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         return bRetVal
     }
+    
+    // MARK: Wishlist table
+    func createWishTable() -> Bool{
+        var bRetVal : Bool = false
+        
+        let createWishTable = sqlite3_exec(dbQueue, "CREATE TABLE IF NOT EXISTS Wish (wishID INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT, usersID INTEGER NOT NULL, productID INTEGER NOT NULL)", nil, nil, nil)
+        
+        if(createWishTable != SQLITE_OK){
+            print("Cannot create wish table :(")
+            bRetVal = false
+        }
+        else{
+            bRetVal = true
+        }
+        return bRetVal
+    }
+    
     
     // MARK: Orders table
     func createOrderTable() -> Bool{

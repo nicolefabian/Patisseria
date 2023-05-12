@@ -70,11 +70,27 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                         
                         if String(cString: sqlite3_column_text(selectStatementQuery, 1)) == "admin@test.com" && String(cString: sqlite3_column_text(selectStatementQuery, 2)) == "admin1234" {
                             // User is an admin, navigate to admin view controller
-                            let adminViewController = storyboard?.instantiateViewController(withIdentifier: "AdminViewController") as! AdminViewController
+                            
+                            
+                            // User is an admin, navigate to admin view controller
+                            let adminViewController = storyboard?.instantiateViewController(withIdentifier: "productViewController") as! ProductViewController
                             navigationController?.pushViewController(adminViewController, animated: true)
                             
                             // Hide the back button in the regular view controller
                                     navigationController?.setNavigationBarHidden(true, animated: false)
+                            
+                            
+                            
+                            
+                            
+                            // let adminTableViewController = storyboard?.instantiateViewController(withIdentifier: "AdminNC") as! AdminTableViewController; navigationController
+                            
+                            // let adminTableViewController = storyboard?.instantiateViewController(withIdentifier: "AdminNC") as! AdminTableViewController
+                            
+                            // navigationController?.pushViewController(adminTableViewController, animated: true)
+                            
+                            // Hide the back button in the regular view controller
+                            // navigationController?.setNavigationBarHidden(true, animated: false)
                         }
                         else if String(cString: sqlite3_column_text(selectStatementQuery, 3)) == "Yes"{
                             // User is an admin, navigate to admin view controller
