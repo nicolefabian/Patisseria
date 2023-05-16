@@ -12,10 +12,18 @@ var dbQueue: OpaquePointer!
 
 // db will be within the iOS device
 var dbURL = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as String
+
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        
+        //UINavigationBar.appearance().setBackgroundImage(UIImage(), for: .default)
+        //UINavigationBar.appearance().shadowImage = UIImage()
+        //changing the color of back button text 
+        UINavigationBar.appearance().tintColor = .brown
+       
+        
         // create and open db + set the pointer
         dbQueue = createAndOpenDb()
         

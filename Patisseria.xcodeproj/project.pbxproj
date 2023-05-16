@@ -26,6 +26,14 @@
 		3F6D4FAF2A0D559B007E602C /* ProductDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6D4FAE2A0D559B007E602C /* ProductDetailViewController.swift */; };
 		3F6D4FB12A0E10F6007E602C /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6D4FB02A0E10F6007E602C /* Product.swift */; };
 		3FF1E6BD2A0E4986005AD8C6 /* ProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF1E6BC2A0E4986005AD8C6 /* ProductViewController.swift */; };
+		BB5D7F9A2A0F4EAE000FB994 /* CategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB5D7F982A0F4EAE000FB994 /* CategoryCollectionViewCell.swift */; };
+		BB5D7F9B2A0F4EAE000FB994 /* CategoryCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB5D7F992A0F4EAE000FB994 /* CategoryCollectionViewCell.xib */; };
+		BB5D7F9E2A0FB216000FB994 /* CategoryCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB5D7F9D2A0FB216000FB994 /* CategoryCardView.swift */; };
+		BBD6AF412A10AFEA006FC5BD /* UiViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD6AF402A10AFEA006FC5BD /* UiViewController+Extension.swift */; };
+		BBD6AF442A10B58B006FC5BD /* CategoryListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD6AF422A10B58B006FC5BD /* CategoryListTableViewCell.swift */; };
+		BBD6AF452A10B58B006FC5BD /* CategoryListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BBD6AF432A10B58B006FC5BD /* CategoryListTableViewCell.xib */; };
+		BBD6AF472A10BAE8006FC5BD /* CategoryListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD6AF462A10BAE8006FC5BD /* CategoryListViewController.swift */; };
+		BBD6AF492A117338006FC5BD /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD6AF482A117338006FC5BD /* Category.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +58,14 @@
 		3F6D4FAE2A0D559B007E602C /* ProductDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailViewController.swift; sourceTree = "<group>"; };
 		3F6D4FB02A0E10F6007E602C /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		3FF1E6BC2A0E4986005AD8C6 /* ProductViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductViewController.swift; sourceTree = "<group>"; };
+		BB5D7F982A0F4EAE000FB994 /* CategoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCollectionViewCell.swift; sourceTree = "<group>"; };
+		BB5D7F992A0F4EAE000FB994 /* CategoryCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryCollectionViewCell.xib; sourceTree = "<group>"; };
+		BB5D7F9D2A0FB216000FB994 /* CategoryCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCardView.swift; sourceTree = "<group>"; };
+		BBD6AF402A10AFEA006FC5BD /* UiViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UiViewController+Extension.swift"; sourceTree = "<group>"; };
+		BBD6AF422A10B58B006FC5BD /* CategoryListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryListTableViewCell.swift; sourceTree = "<group>"; };
+		BBD6AF432A10B58B006FC5BD /* CategoryListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryListTableViewCell.xib; sourceTree = "<group>"; };
+		BBD6AF462A10BAE8006FC5BD /* CategoryListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryListViewController.swift; sourceTree = "<group>"; };
+		BBD6AF482A117338006FC5BD /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +118,7 @@
 			children = (
 				3F4FE0D12A03805C00DA0418 /* OnboardingSlide.swift */,
 				3F6D4FB02A0E10F6007E602C /* Product.swift */,
+				BBD6AF482A117338006FC5BD /* Category.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -112,7 +129,6 @@
 				3F6D4FA72A0D4C75007E602C /* VisuallyImpaired */,
 				3F6D4FA22A0D4425007E602C /* Regular */,
 				3F6D4FA12A0D441D007E602C /* Admin */,
-				3F590E6E2A03C04100CD61EA /* Register */,
 				3F590E6B2A03AF1C00CD61EA /* Login */,
 				3F4FE0CB2A037B7900DA0418 /* Onboarding */,
 			);
@@ -122,6 +138,8 @@
 		3F4FE0CA2A037B6700DA0418 /* CustomViews */ = {
 			isa = PBXGroup;
 			children = (
+				BB5D7F9C2A0FB1FD000FB994 /* CategoryCardView */,
+				BB5D7F962A0F4E4E000FB994 /* CollectionViewCell */,
 			);
 			path = CustomViews;
 			sourceTree = "<group>";
@@ -139,6 +157,7 @@
 			isa = PBXGroup;
 			children = (
 				3F4FE0CF2A037ED800DA0418 /* UIView+Extension.swift */,
+				BBD6AF402A10AFEA006FC5BD /* UiViewController+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -166,6 +185,7 @@
 				3F6D4FAC2A0D54AD007E602C /* AdminTableViewCell.swift */,
 				3F6D4FAE2A0D559B007E602C /* ProductDetailViewController.swift */,
 				3FF1E6BC2A0E4986005AD8C6 /* ProductViewController.swift */,
+				3F590E6E2A03C04100CD61EA /* Register */,
 			);
 			path = Admin;
 			sourceTree = "<group>";
@@ -174,6 +194,7 @@
 			isa = PBXGroup;
 			children = (
 				3F6D4FA52A0D4485007E602C /* RegularViewController.swift */,
+				BBD6AF462A10BAE8006FC5BD /* CategoryListViewController.swift */,
 			);
 			path = Regular;
 			sourceTree = "<group>";
@@ -184,6 +205,41 @@
 				3F6D4FA82A0D4C99007E602C /* VisualImpairedViewController.swift */,
 			);
 			path = VisuallyImpaired;
+			sourceTree = "<group>";
+		};
+		BB5D7F962A0F4E4E000FB994 /* CollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				BBD6AF3B2A1063A4006FC5BD /* CategoryListTableViewCell */,
+				BB5D7F972A0F4E82000FB994 /* CategoryCollectionViewCell */,
+			);
+			path = CollectionViewCell;
+			sourceTree = "<group>";
+		};
+		BB5D7F972A0F4E82000FB994 /* CategoryCollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				BB5D7F982A0F4EAE000FB994 /* CategoryCollectionViewCell.swift */,
+				BB5D7F992A0F4EAE000FB994 /* CategoryCollectionViewCell.xib */,
+			);
+			path = CategoryCollectionViewCell;
+			sourceTree = "<group>";
+		};
+		BB5D7F9C2A0FB1FD000FB994 /* CategoryCardView */ = {
+			isa = PBXGroup;
+			children = (
+				BB5D7F9D2A0FB216000FB994 /* CategoryCardView.swift */,
+			);
+			path = CategoryCardView;
+			sourceTree = "<group>";
+		};
+		BBD6AF3B2A1063A4006FC5BD /* CategoryListTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				BBD6AF422A10B58B006FC5BD /* CategoryListTableViewCell.swift */,
+				BBD6AF432A10B58B006FC5BD /* CategoryListTableViewCell.xib */,
+			);
+			path = CategoryListTableViewCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -244,6 +300,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BB5D7F9B2A0F4EAE000FB994 /* CategoryCollectionViewCell.xib in Resources */,
+				BBD6AF452A10B58B006FC5BD /* CategoryListTableViewCell.xib in Resources */,
 				3F4FE0C12A036B8C00DA0418 /* LaunchScreen.storyboard in Resources */,
 				3F4FE0BE2A036B8C00DA0418 /* Assets.xcassets in Resources */,
 				3F4FE0B92A036B8B00DA0418 /* Main.storyboard in Resources */,
@@ -260,19 +318,25 @@
 				3F6D4FA42A0D4454007E602C /* AddProductViewController.swift in Sources */,
 				3F590E722A04E1F900CD61EA /* RegisterViewController.swift in Sources */,
 				3F6D4FAF2A0D559B007E602C /* ProductDetailViewController.swift in Sources */,
+				BB5D7F9A2A0F4EAE000FB994 /* CategoryCollectionViewCell.swift in Sources */,
+				BB5D7F9E2A0FB216000FB994 /* CategoryCardView.swift in Sources */,
 				3F4FE0BC2A036B8B00DA0418 /* Patisseria.xcdatamodeld in Sources */,
 				3FF1E6BD2A0E4986005AD8C6 /* ProductViewController.swift in Sources */,
 				3F6D4FA62A0D4485007E602C /* RegularViewController.swift in Sources */,
+				BBD6AF472A10BAE8006FC5BD /* CategoryListViewController.swift in Sources */,
 				3F4FE0CD2A037BB200DA0418 /* OnboardingViewController.swift in Sources */,
 				3F4FE0B22A036B8B00DA0418 /* AppDelegate.swift in Sources */,
+				BBD6AF442A10B58B006FC5BD /* CategoryListTableViewCell.swift in Sources */,
 				3F4FE0D02A037ED800DA0418 /* UIView+Extension.swift in Sources */,
 				3F6D4FB12A0E10F6007E602C /* Product.swift in Sources */,
+				BBD6AF412A10AFEA006FC5BD /* UiViewController+Extension.swift in Sources */,
 				3F6D4FA92A0D4C99007E602C /* VisualImpairedViewController.swift in Sources */,
 				3F590E6D2A03AF3400CD61EA /* LoginViewController.swift in Sources */,
 				3F4FE0D22A03805C00DA0418 /* OnboardingSlide.swift in Sources */,
 				3F6D4FAD2A0D54AD007E602C /* AdminTableViewCell.swift in Sources */,
 				3F4FE0D42A03830E00DA0418 /* OnboardingCollectionViewCell.swift in Sources */,
 				3F4FE0B42A036B8B00DA0418 /* SceneDelegate.swift in Sources */,
+				BBD6AF492A117338006FC5BD /* Category.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
