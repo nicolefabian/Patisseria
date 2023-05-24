@@ -53,22 +53,14 @@ func initProductList(){
 
 
 class CategoryListViewController: UIViewController {
-    var productShowedInList: Product!
-  
     @IBOutlet weak var categoryListTableView: UITableView!
   
-
-   // var filteredProducts: [Product] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         
-        
-        //setting up the title based on the category name from homepage
-        //title = defaultProducts.productCategoryName
-        initProductList()
         //adding the categorylisttableviewcell into the view
         registerCells()
         print(defaultProducts.count)
@@ -78,11 +70,6 @@ class CategoryListViewController: UIViewController {
         //loading the cells to the table view
         categoryListTableView.register(UINib(nibName: CategoryListTableViewCell.identifier, bundle: nil), forCellReuseIdentifier: CategoryListTableViewCell.identifier)
     }
-    
-//    func filterProductsByCategory(category: String) {
-//           filteredProducts = initialProductInCategory.filter { $0.productCategory == category }
-//           categoryListTableView.reloadData()
-//       }
 }
 
 extension CategoryListViewController: UITableViewDelegate, UITableViewDataSource {

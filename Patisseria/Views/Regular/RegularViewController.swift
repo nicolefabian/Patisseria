@@ -9,6 +9,7 @@ import UIKit
 
 
 var defaultCategory = [Category]()
+var searchedProd = [Product]()
 
 // MARK: initial productList
 func initCategoryList(){
@@ -20,6 +21,8 @@ func initCategoryList(){
     defaultCategory.append(cat3)
     let cat4 = Category(productCategory: "Special Cakes", productImage: "categorycake")
     defaultCategory.append(cat4)
+    let cat5 = Category(productCategory: "Desserts", productImage: "categorydessert")
+    defaultCategory.append(cat5)
 }
 
 class RegularViewController: UIViewController {
@@ -27,16 +30,21 @@ class RegularViewController: UIViewController {
     @IBOutlet weak var categoryCollectionView: UICollectionView!
     @IBOutlet weak var productsTableView: UITableView!
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        initCategoryList()
         // Do any additional setup after loading the view.
-        registerCells()
-        registerTableCells()
-        initProductList()
         
-        print("hi",defaultCategory.count)
+        //loading category
+        initCategoryList()
+        //loading the collection cell
+        registerCells()
+        //loading the table cell
+        registerTableCells()
+        //loading the products
+        initProductList()
+        //setting the searchProd to display all products upon loading
+        searchedProd = defaultProducts
     }
 
     private func registerCells() {
@@ -47,9 +55,12 @@ class RegularViewController: UIViewController {
         //loading the cells to the table view
         productsTableView.register(UINib(nibName: CategoryListTableViewCell.identifier, bundle: nil), forCellReuseIdentifier: CategoryListTableViewCell.identifier)
     }
+    
+    
 }
 
-extension RegularViewController: UICollectionViewDelegate, UICollectionViewDataSource, UITableViewDelegate, UITableViewDataSource  {
+extension RegularViewController: UICollectionViewDelegate, UICollectionViewDataSource, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate  {
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return defaultCategory.count
     }
@@ -64,7 +75,6 @@ extension RegularViewController: UICollectionViewDelegate, UICollectionViewDataS
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if collectionView == categoryCollectionView {
             let controller = CategoryListViewController.instantiate()
-           // controller.productShowedInList = defaultProducts[indexPath.row]
             navigationController?.pushViewController(controller, animated: true)
         } else  {
             let controller = CategoryListViewController.instantiate()
@@ -75,26 +85,38 @@ extension RegularViewController: UICollectionViewDelegate, UICollectionViewDataS
     //--TABLE VIEW------
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         //displaying all the products
-        print("hello", defaultProducts.count)
-        return defaultProducts.count
+        print("hello searchProd count:", searchedProd.count)
+        return searchedProd.count
     }
         
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: CategoryListTableViewCell.identifier) as! CategoryListTableViewCell
         //displaying all the elements inside the cell
-        cell.setup(prod: defaultProducts[indexPath.row])
-        //displaying each site
-        //cell.siteNameLabel.text = searchedSites[indexPath.row].siteName
-        //cell.productImage.image = UIImage(named: thisProduct.productImage)
-        print(cell)
+        cell.setup(prod: searchedProd[indexPath.row])
         return cell
     }
         
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         //loading the ProductDetailViewController
         let controller = ProductDetailViewController.instantiate()
-        controller.selectedDetailProduct = defaultProducts[indexPath.row]
+        controller.selectedDetailProduct = searchedProd[indexPath.row]
         navigationController?.pushViewController(controller, animated: true)
+    }
+    
+    //---SEARCH----
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        searchedProd = []
+        if searchText == "" {
+            searchedProd = defaultProducts
+        }
+   
+        for eachProd in defaultProducts {
+            if eachProd.productName.lowercased().contains(searchText.lowercased()) {
+                searchedProd.append(eachProd)
+            }
+        }
+        //reload the table
+        productsTableView.reloadData()
     }
 
 }
